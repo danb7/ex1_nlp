@@ -28,7 +28,7 @@ generate_most_similar_words(model, polysemous_words_group_2, 10, init_indent=ind
 # Synonyms and Antonyms
 print('Synonyms and Antonyms:')
 print('_' * len('Synonyms and Antonyms:'))
-w1, w2, w3 = 'happy', 'joyful', 'sad'
+w1, w2, w3 = 'love', 'like', 'hate'
 sim_w1_w2 = model.similarity(w1,w2)
 sim_w1_w3 = model.similarity(w1,w3)
 print(indent_level + f'similarity between w1 ({w1}) and w2 ({w2}): {sim_w1_w2}')
@@ -40,7 +40,7 @@ print('The Effect of Different Corpora:')
 print('_' * len('The Effect of Different Corpora:'))
 wiki_model = dl.load("glove-wiki-gigaword-200")
 twitter_model = dl.load("glove-twitter-200")
-sim_cross_corpus_words = ['color', 'morning', 'dog', 'helicopter', 'coffee']
+sim_cross_corpus_words = ['yellow', 'morning', 'dog', 'car', 'coffee']
 different_cross_corpus_words = ['umbrella', 'troll', 'profile', 'mute', 'gaming']
 print(indent_level + ('5 words whose top 10 neighbors based on the news corpus are very similar '
                       'to their top 10 neighbors based on the twitter corpus:'))
@@ -66,9 +66,17 @@ verbs_vectors = [model[word] for word in all_verbs]
 pca = decomposition.PCA(n_components=2)
 Z = pca.fit_transform(verbs_vectors)
 
+print(indent_level + (f'Percentage of variance explained by the two components: '
+                      f'{pca.explained_variance_ratio_}'))
+print(indent_level + (f'together they explained just '
+                      f'{pca.explained_variance_ratio_.sum()} of the variance!'))
+
 plt.scatter(Z[past_verbs_idx, 0], Z[past_verbs_idx, 1], c='blue', label='ed')
 plt.scatter(Z[present_verbs_idx, 0], Z[present_verbs_idx, 1], c='green', label='ing')
 plt.legend()
 plt.title("2D Scatter Plot after PCA of words ending with 'ed' or 'ing")
 plt.savefig('pca_plot.png')
+print(indent_level + 'plot saved in .\pca_plot.png')
+
+print('\nfinish!')
 # plt.show()
