@@ -80,3 +80,10 @@ print(indent_level + 'plot saved in .\pca_plot.png')
 
 print('\nfinish!')
 # plt.show()
+
+#Word-similarities in Large Language Model
+print("Word-similarities in Large Language Model")
+two_words = ['run', 'espresso']
+print('Generating lists of the 100 most similar words:')
+print('_' * len('Generating lists of the 100 most similar words:'))
+generate_most_similar_words(model, two_words, 100)
