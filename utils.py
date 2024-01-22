@@ -1,6 +1,6 @@
+import numpy as np
 
 indent_level = '\t' # to print hierarchical and more clear
-
 
 def get_most_similar_words(model, words, n=20):
     """
@@ -40,3 +40,20 @@ def compare_models_similarity(model1, model2, words, n, init_indent=''):
             print( init_indent+(f'\t ({sim_model_1[i][0]}, {round(sim_model_1[i][1], 2)})\t|\t'
                                 f'({sim_model_2[i][0]}, {round(sim_model_2[i][1], 2)})')
             )
+
+def average_precision(y_true):
+    # Calculate Precision at each position
+    precision = np.cumsum(y_true) / np.arange(1, len(y_true) + 1)
+
+    # Calculate Average Precision at K
+    ap = np.sum(precision * y_true) / np.sum(y_true)
+
+    return ap
+
+def mean_average_precision(y_true_array):
+    ap_array = np.array([])
+    for y_true in y_true_array:
+        ap = average_precision(y_true)
+        ap_array = np.append(ap_array, ap)
+
+    return np.mean(ap_array)
