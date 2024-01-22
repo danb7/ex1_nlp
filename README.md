@@ -5,11 +5,11 @@ First assignment in NLP course: Distributional Similarity
 ### Plotting Code
 word_vectors.py - the main script. produce the desirable output for each part of the assignment
 ### Additional Scripts
-utils.py - auxiliary functions for running the main script  
-map_dict.py - definitions of the manually judgments of the correctness of the similarities for evaluting MAP in the MAP part
+* utils.py - auxiliary functions for running the main script
+* map_dict.py - definitions of the manually judgments of the correctness of the similarities for evaluting MAP in the MAP part
 ### other files
-pca_plot.png - the saved figure from the Dimensionality Reduction part  
-report.pdf - the final 
+* pca_plot.png - the saved figure from the Dimensionality Reduction part
+* report.pdf - the final 
 
 How to run
 ----------
