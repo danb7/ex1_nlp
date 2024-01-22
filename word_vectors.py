@@ -4,7 +4,7 @@ from sklearn import decomposition
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from utils import *
-from map_dict import *
+import map_dict
 
 
 model = dl.load("word2vec-google-news-300")
@@ -92,10 +92,10 @@ generate_most_similar_words(model, two_words, 100)
 #Mean Average Precision (MAP) evaluation
 print("Mean Average Precision (MAP) evaluation")
 print('_' * len("Mean Average Precision (MAP) evaluation"))
-topically_w2v_map = mean_average_precision(topically_w2v_list)
-topically_gpt_map = mean_average_precision(topically_gpt_list)
-semantic_w2v_map  = mean_average_precision(semantic_w2v_list)
-semantic_gpt_map  = mean_average_precision(semantic_gpt_list)
+topically_w2v_map = mean_average_precision(map_dict.topically_w2v_list)
+topically_gpt_map = mean_average_precision(map_dict.topically_gpt_list)
+semantic_w2v_map  = mean_average_precision(map_dict.semantic_w2v_list)
+semantic_gpt_map  = mean_average_precision(map_dict.semantic_gpt_list)
 print(indent_level + f"MAP for word2vec topically related words: {topically_w2v_map}")
 print(indent_level + f"MAP for ChatGPT topically related words: {topically_gpt_map}")
 print(indent_level + f"MAP for word2vec same semantic class words: {semantic_w2v_map}")

@@ -44,8 +44,7 @@ def compare_models_similarity(model1, model2, words, n, init_indent=''):
 def average_precision(y_true):
     # Calculate Precision at each position
     precision = np.cumsum(y_true) / np.arange(1, len(y_true) + 1)
-
-    # Calculate Average Precision at K
+    # Calculate Average Precision
     ap = np.sum(precision * y_true) / np.sum(y_true)
 
     return ap
