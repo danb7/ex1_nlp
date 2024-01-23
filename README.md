@@ -9,7 +9,7 @@ word_vectors.py - the main script. produce the desirable output for each part of
 * map_dict.py - definitions of the manually judgments of the correctness of the similarities for evaluting MAP in the MAP part
 ### other files
 * pca_plot.png - the saved figure from the Dimensionality Reduction part
-* report.pdf - the final 
+* report.pdf - the final report
 
 How to run
 ----------
