@@ -78,8 +78,6 @@ plt.legend()
 plt.title("2D Scatter Plot after PCA of words ending with 'ed' or 'ing")
 plt.savefig('pca_plot.png')
 print(indent_level + 'plot saved in .\pca_plot.png')
-
-print('\nfinish!')
 # plt.show()
 
 #Word-similarities in Large Language Model
@@ -100,3 +98,5 @@ print(indent_level + f"MAP for word2vec topically related words: {topically_w2v_
 print(indent_level + f"MAP for ChatGPT topically related words: {topically_gpt_map}")
 print(indent_level + f"MAP for word2vec same semantic class words: {semantic_w2v_map}")
 print(indent_level + f"MAP for ChatGPT same semantic class words: {semantic_gpt_map}")
+
+print('\nfinish!')
