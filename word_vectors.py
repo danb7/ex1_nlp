@@ -2,7 +2,6 @@ import gensim.downloader as dl
 import numpy as np
 from sklearn import decomposition
 import matplotlib.pyplot as plt
-from sklearn.neighbors import KNeighborsClassifier
 from utils import *
 import map_dict
 
@@ -80,14 +79,14 @@ plt.savefig('pca_plot.png')
 print(indent_level + 'plot saved in .\pca_plot.png')
 # plt.show()
 
-#Word-similarities in Large Language Model
+# Word-similarities in Large Language Model
 print("Word-similarities in Large Language Model")
 two_words = ['run', 'espresso']
 print('Generating lists of the 100 most similar words:')
 print('_' * len('Generating lists of the 100 most similar words:'))
 generate_most_similar_words(model, two_words, 100)
 
-#Mean Average Precision (MAP) evaluation
+# Mean Average Precision (MAP) evaluation
 print("Mean Average Precision (MAP) evaluation")
 print('_' * len("Mean Average Precision (MAP) evaluation"))
 topically_w2v_map = mean_average_precision(map_dict.topically_w2v_list)
