@@ -10,7 +10,7 @@ word_vectors.py - the main script. produce the desirable output for each part of
 ### other files
 * report.pdf - the final report
 * pca_plot.png - the saved figure from the Dimensionality Reduction part
-* 2023-2024 Assignment 1_ Distributional Similarity.pdf - the home assignment
+
 How to run
 ----------
 ```
