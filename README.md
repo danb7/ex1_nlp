@@ -1,5 +1,5 @@
 # ex1_nlp
-First assignment in NLP course: Distributional Similarity
+First assignment in NLP course: Distributional Similarity  
 by: Daniel Bazar 314708181 & Lior Krengel 315850594
 
 ## project files
